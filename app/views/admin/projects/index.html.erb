@@ -1,0 +1,112 @@
+<div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}" data-list='{"valueNames": ["name"], "listClass": "listAlias"}'>
+  <h1><%= @projects.size %> projets</h1>
+  <!-- Tab content -->
+  <div class="tab-content">
+    <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">
+      <div class="row listAlias">
+      <% @projects.each do |project| %>
+
+        <div class="col-12 col-md-6 col-xl-4">
+
+          <!-- Card -->
+          <div class="card">
+
+            <!-- Image -->
+            <%= link_to project_path(project) %>
+            <figure>
+              <img src="assets/img/avatars/projects/project-1.jpg" alt="..." class="card-img-top">
+              <%= cl_image_tag project.photos[0].key, class: "card-img-top"  %>
+            </figure>
+            <% end %>
+
+            <!-- Body -->
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col">
+
+                  <!-- Title -->
+                  <h4 class="mb-2 name">
+                    <%= link_to project_path(project) do %>
+                      project.title
+                    <% end %>
+                  </h4>
+
+                  <!-- Subtitle -->
+                  <p class="card-text small text-muted">
+                    Updated 4hr ago
+                  </p>
+
+                </div>
+                <div class="col-auto">
+
+                  <!-- Dropdown -->
+                  <div class="dropdown">
+                    <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fe fe-more-vertical"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                      <a href="#!" class="dropdown-item">
+                        Action
+                      </a>
+                      <a href="#!" class="dropdown-item">
+                        Another action
+                      </a>
+                      <a href="#!" class="dropdown-item">
+                        Something else here
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer card-footer-boxed">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="row align-items-center g-0">
+                    <div class="col-auto">
+
+                      <!-- Value -->
+                      <div class="small me-2">29%</div>
+
+                    </div>
+                    <div class="col">
+
+                      <!-- Progress -->
+                      <div class="progress progress-sm">
+                        <div class="progress-bar" role="progressbar" style="width: 29%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                </div>
+                <div class="col-auto">
+
+                  <!-- Avatar group -->
+                  <div class="avatar-group">
+                    <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                      <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+                    <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                      <img src="assets/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+                    <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Daniela Dewitt">
+                      <img src="assets/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+                    <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Miyah Myles">
+                      <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div>
+  </div> <!-- / .tab-content -->
+</div>
