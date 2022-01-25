@@ -1,5 +1,7 @@
 <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}" data-list='{"valueNames": ["name"], "listClass": "listAlias"}'>
-  <h1><%= @projects.size %> projets</h1>
+  <h1>Dashboard</h1>
+  <h2>Projets</h2>
+  <p><%= @projects.length %> projets</p>
   <!-- Tab content -->
   <div class="tab-content">
     <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">

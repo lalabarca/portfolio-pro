@@ -29,9 +29,9 @@ module Admin
       redirect_to projects_path
     end
 
-    def time_ago
+    def time_ago(date)
       from_time = Time.now
-      distance_of_time_in_words(from_time, @project.updated_at)
+      distance_of_time_in_words(from_time, date)
     end
 
 
@@ -42,7 +42,7 @@ module Admin
     end
 
     def project_params
-      params.require(:project).permit(:title, :finished, :date_start, :date_end, :url, photos: [])
+      params.require(:project).permit(:title, :description, :finished, :date_start, :date_end, :url, :collaborators_desc, photos: [])
     end
   end
 end

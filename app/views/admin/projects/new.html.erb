@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10 col-xl-8">
+
+      <!-- Header -->
+      <div class="header mt-md-5">
+        <div class="header-body">
+          <div class="row align-items-center">
+            <div class="col">
+
+              <!-- Pretitle -->
+              <h6 class="header-pretitle">
+                Nouveau projet
+              </h6>
+
+              <!-- Title -->
+              <h1 class="header-title">
+                Créer un nouveau projet
+              </h1>
+
+            </div>
+          </div> <!-- / .row -->
+        </div>
+      </div>
+
+      <!-- Form -->
+      <%= simple_form_for(@project, url: new_admin_project_path, :method => :post, html: { class: "mb-4"}) do |f| %>
+
+        <!-- Project name -->
+        <div class="form-group">
+          <!-- Input -->
+          <%= f.input :title, label: "Nom du projet", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
+        </div>
+
+        <!-- Project description -->
+        <div class="form-group">
+
+          <!-- Textarea -->
+          <%= f.rich_text_area :description, label: "Description du projet", label_html: { class: "form-label" } %>
+
+        </div>
+
+        <!-- Project finished ? -->
+        <div class="form-group">
+
+          <!-- Switch -->
+          <div class="form-check form-switch">
+            <%= f.input :finished, label: "Projet fini ?", label_html: { class: "form-label" }, input_html: { class: "toggle" } %>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+
+            <!-- Start date -->
+            <div class="form-group">
+
+              <%= f.input :date_start,
+              as: :date, start_year: Time.now.year - 90, end_year: Time.now.year - 8,
+              order: [:day, :month, :year], html5: true, label:"Début du projet",  input_html: {class:"form-label", placeholder:"Choisir une date"} %>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6">
+
+            <!-- End date -->
+            <div class="form-group">
+
+              <!-- Input -->
+              <%= f.input :date_end,
+              as: :date, start_year: Time.now.year - 90, end_year: Time.now.year - 8,
+              order: [:day, :month, :year], html5: true, label:"Fin du projet",  input_html: {class:"form-label", placeholder:"Choisir une date"} %>
+
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+
+        <!-- Divider -->
+        <hr class="mt-4 mb-5">
+
+        <!-- Project cover -->
+        <div class="form-group">
+          <!-- Dropzone -->
+          <div class="dropzone dropzone-single mb-3" data-dropzone='{"url": "https://", "maxFiles": 1, "acceptedFiles": "image/*"}'>
+
+            <!-- Fallback -->
+            <div class="fallback">
+              <div class="form-group">
+                <%= f.input :photos, as: :file, label: "Images du projet", label_html: { class: "form-label" }, input_html: { multiple: true } %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project url -->
+        <div class="form-group">
+          <!-- Input -->
+          <%= f.input :url, label: "Url du projet", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
+        </div>
+
+        <!-- Divider -->
+        <hr class="mt-5 mb-5">
+
+        <!-- Project collaborator -->
+        <div class="form-group">
+
+          <!-- Textarea -->
+          <%= f.rich_text_area :collaborator_desc, label: "Les collaborateurs du projet", label_html: { class: "form-label" } %>
+
+        </div>
+
+        <!-- Divider -->
+        <hr class="mt-5 mb-5">
+
+        <!-- Buttons -->
+
+        <%= f.submit class: "btn w-100 btn-primary" %>
+        <%= link_to "Annuler", admin_path, class:"btn w-100 btn-link text-muted mt-2" %>
+      <% end %>
+
+    </div>
+  </div> <!-- / .row -->
+</div>

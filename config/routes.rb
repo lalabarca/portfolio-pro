@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :admin do
+    get '', action: 'index', as: '/'
     resources :projects, except: :show
     resources :skills, except: :show
   end

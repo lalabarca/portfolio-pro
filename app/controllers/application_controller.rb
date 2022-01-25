@@ -1,16 +1,16 @@
 class ApplicationController < ActionController::Base
-  skip_before_action :authenticate_user!, only: :home
+  # skip_before_action :authenticate_user!, only: :home
 
   def home
   end
 
-  include Pundit
+  # include Pundit
 
-  # Pundit: white-list approach.
-  after_action :verify_authorized, except: :home, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
+  # # Pundit: white-list approach.
+  # after_action :verify_authorized, except: :home, unless: :skip_pundit?
+  # after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
 
