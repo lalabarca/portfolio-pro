@@ -24,7 +24,7 @@
       </div>
 
       <!-- Form -->
-      <%= simple_form_for(@project, url: new_admin_project_path, :method => :post, html: { class: "mb-4"}) do |f| %>
+      <%= simple_form_for(@project, url: admin_projects_path, :method => :post, html: { class: "mb-4"}) do |f| %>
 
         <!-- Project name -->
         <div class="form-group">
@@ -108,8 +108,10 @@
         <!-- Project collaborator -->
         <div class="form-group">
 
+        <%= f.label "Les collaborateurs du projet", label_html: { class: "form-label mb-4" } %>
+
           <!-- Textarea -->
-          <%= f.rich_text_area :collaborator_desc, label: "Les collaborateurs du projet", label_html: { class: "form-label" } %>
+          <%= f.rich_text_area :collaborator_desc %>
 
         </div>
 

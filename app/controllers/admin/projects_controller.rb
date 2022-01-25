@@ -1,5 +1,8 @@
 module Admin
   class ProjectsController < AdminController
+    require 'action_view'
+    include ActionView::Helpers::DateHelper
+
     before_action :set_project, only: [:edit, :update, :destroy]
 
     def index
@@ -15,7 +18,7 @@ module Admin
       if @project.save
         redirect_to project_path(@project)
       else
-        redirect_to projects_path
+        redirect_to admin_projects_path
       end
     end
 
@@ -33,7 +36,7 @@ module Admin
       from_time = Time.now
       distance_of_time_in_words(from_time, date)
     end
-
+    helper_method :time_ago
 
     private
 

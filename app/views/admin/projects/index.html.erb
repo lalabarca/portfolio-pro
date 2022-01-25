@@ -12,7 +12,7 @@
           <div class="card">
 
             <!-- Image -->
-            <%= link_to project_path(project) %>
+            <%= link_to project_path(project) do %>
             <figure>
               <img src="assets/img/avatars/projects/project-1.jpg" alt="..." class="card-img-top">
               <%= cl_image_tag project.photos[0].key, class: "card-img-top"  %>
@@ -27,13 +27,13 @@
                   <!-- Title -->
                   <h4 class="mb-2 name">
                     <%= link_to project_path(project) do %>
-                      project.title
+                      <%= project.title %>
                     <% end %>
                   </h4>
 
                   <!-- Subtitle -->
                   <p class="card-text small text-muted">
-                    Updated <%= time_ago(project.updated_at) %>
+                    Modifié il y a <%= time_ago(project.updated_at) %>
                   </p>
 
                 </div>
@@ -45,8 +45,8 @@
                       <i class="fe fe-more-vertical"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
-                      <%= link_to "Modifier", edit_admin_project(project), class: "dropdown-item" %>
-                      <%= link_to "Supprimer", admin_project(project), method: :delete,  data: { confirm: "Êtes vous sûrs ? Cette action supprimera définitivement ce projet." }, class: "dropdown-item" %>
+                      <%= link_to "Modifier", edit_admin_project_path(project), class: "dropdown-item" %>
+                      <%= link_to "Supprimer", admin_project_path(project), method: :delete,  data: { confirm: "Êtes vous sûrs ? Cette action supprimera définitivement ce projet." }, class: "dropdown-item" %>
                     </div>
                   </div>
 
@@ -88,6 +88,7 @@
           </div>
 
         </div>
+      <% end %>
       </div> <!-- / .row -->
     </div>
   </div> <!-- / .tab-content -->
