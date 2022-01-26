@@ -55,7 +55,7 @@
         <div class="form-group">
 
           <!-- Select -->
-          <%= f.input :skill_ids, label:"Compétences associées", as: :select, collection: Skill.all.collect {|x| [x.title, x.id]}, input_html: { multiple: true, data:{toggle:'select', close_on_select:'false'} } %>
+          <%= f.input :skill_ids, label:"Compétences associées", as: :select, collection: Skill.all.collect {|x| [x.title, x.id]}, prompt: "Choix de compétence", input_html: { data:{toggle:'select', close_on_select:'false'} } %>
 
         </div>
 
