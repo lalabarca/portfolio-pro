@@ -35,6 +35,7 @@
         <!-- Project description -->
         <div class="form-group">
 
+          <p>Description du projet</p>
           <!-- Textarea -->
           <%= f.rich_text_area :description, label: "Description du projet", label_html: { class: "form-label" } %>
 
@@ -108,10 +109,10 @@
         <!-- Project collaborator -->
         <div class="form-group">
 
-        <%= f.label "Les collaborateurs du projet", label_html: { class: "form-label mb-4" } %>
+          <p>Les collaborateurs du projet</p>
 
           <!-- Textarea -->
-          <%= f.rich_text_area :collaborator_desc %>
+          <%= f.rich_text_area :collaborator_desc, input_html: { class: "mt-4"} %>
 
         </div>
 

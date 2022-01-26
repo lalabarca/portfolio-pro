@@ -1,4 +1,4 @@
-<div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}" data-list='{"valueNames": ["name"], "listClass": "listAlias"}'>
+<div class="container-fluid">
   <h1>Dashboard</h1>
   <h2>Projets</h2>
   <p><%= @projects.length %> projets</p>
@@ -28,8 +28,8 @@
 
                   <!-- Title -->
                   <h4 class="mb-2 name">
-                    <%= link_to project_path(project) do %>
-                      project.title
+                    <%= link_to "", project_path(project) do %>
+                      <%= project.title %>
                     <% end %>
                   </h4>
 

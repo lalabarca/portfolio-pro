@@ -1,5 +1,5 @@
-<div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}" data-list='{"valueNames": ["name"], "listClass": "listAlias"}'>
-  <h1><%= @projects.size %> projets</h1>
+<div class="container-fluid">
+  <h1 class="mt-4"><%= pluralize @projects.size, "projet" %></h1>
   <!-- Tab content -->
   <div class="tab-content">
     <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">
@@ -14,7 +14,6 @@
             <!-- Image -->
             <%= link_to project_path(project) do %>
             <figure>
-              <img src="assets/img/avatars/projects/project-1.jpg" alt="..." class="card-img-top">
               <%= cl_image_tag project.photos[0].key, class: "card-img-top"  %>
             </figure>
             <% end %>
@@ -33,7 +32,7 @@
 
                   <!-- Subtitle -->
                   <p class="card-text small text-muted">
-                    Modifié il y a <%= time_ago(project.updated_at) %>
+                    Updated <%= time_ago(project.updated_at) %>
                   </p>
 
                 </div>
@@ -46,7 +45,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                       <%= link_to "Modifier", edit_admin_project_path(project), class: "dropdown-item" %>
-                      <%= link_to "Supprimer", admin_project_path(project), method: :delete,  data: { confirm: "Êtes vous sûrs ? Cette action supprimera définitivement ce projet." }, class: "dropdown-item" %>
+                      <%= link_to "Supprimer", admin_project_path(project), method: :delete,  data: { confirm: "Êtes-vous sûr ? Cette action supprimera définitivement ce projet." }, class: "dropdown-item" %>
                     </div>
                   </div>
 
