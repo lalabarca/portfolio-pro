@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Skill.destroy_all
+puts "Creating skills"
+
+titles = %w(HTML/Scss Javascript Ruby Rails Photoshop Figma Adobe\ XD Illustrator UI\ Design Google\ Maps\ Api Stimulus\ JS)
+
+titles.each do |t|
+  Skill.create!(title: t, rating: (1..3).to_a.sample)
+end
+
+puts "Finished"

@@ -22,6 +22,8 @@ module Admin
       end
     end
 
+    def edit; end
+
     def update
       @project.update(project_params)
       redirect_to project_path(@project)
