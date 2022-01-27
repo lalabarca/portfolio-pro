@@ -47,7 +47,7 @@ module Admin
     end
 
     def skill_params
-      params.require(:skill).permit(:title, :rating, :photo)
+      params.require(:skill).permit(:title, :rating, :specialty, :photo)
     end
   end
 end

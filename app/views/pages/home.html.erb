@@ -20,3 +20,57 @@
     </div>
   </div>
 </section>
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <article>
+          <h2>Ui Design</h2>
+          <p>Passionée par le graphisme et le design depuis toute petite, j'ai commencé à travailler en tant qu'infographiste puis je me suis tourné vers le webdesign après une formation de Chef de projet multimédia.</p>
+          <p>Le petit <span class="fe fe-plus-circle"></span> : la veille pour toujours être au courant des dernières tendances, le travail avec les typographies et les illustrations, la construction des maquettes et prototypes</p>
+        </article>
+
+        <div>
+          <% @skills_design.each do |skill| %>
+            <%= render 'shared/skills_list', skill: skill %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div>
+          <% @skills_web.each do |skill| %>
+            <%= render 'shared/skills_list', skill: skill %>
+          <% end %>
+          <%= render 'shared/skills_list', skill: @skills_web_standard %>
+        </div>
+        <article>
+          <h2>Développement web</h2>
+          <p>J'ai découvert d'abord le métier d'intégrateur web, qui m'a tout de suite plu. Mais j'ai surtout eu l'opportunité de me former à Ruby on rails et à Javascript en intégrant le batch de Conceptrice - Développeuseuse d’Applications Web, de l'école <em>Le Wagon</em>.</p>
+          <p>Le petit <span class="fe fe-plus-circle"></span> : on peut se former facilement à de nouvelles technologies, les languages de programmation sont universels, lorsqu'on code on a tout de suite une vue du résultat final contrairement à d'autres corps de métiers </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="container">
+    <h2>Mes derniers projets</h2>
+    <div class="cards">
+    <% @projects.each do |project| %>
+      <div class="card-project">
+      <!-- Image -->
+        <%= link_to project_path(project) do %>
+          <figure>
+            <%= cl_image_tag project.photos[3].key  %>
+          </figure>
+        <% end %>
+        <h3>
+        <%= link_to project_path(project) do %>
+          <%= project.title %>
+        <% end %>
+        </h3>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</section>

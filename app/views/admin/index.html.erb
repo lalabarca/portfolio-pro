@@ -263,6 +263,11 @@
               </th>
               <th>
                 <a href="#" class="text-muted list-sort">
+                  Domaine
+                </a>
+              </th>
+              <th>
+                <a href="#" class="text-muted list-sort">
                   Projets associés
                 </a>
               </th>
@@ -296,16 +301,17 @@
               </div>
               </td>
               <td class="project-status">
-
-                <!-- Badge -->
-                <div class="col">
-                  <!-- Progress -->
+                  <!-- Niveaux -->
                   <div class="skill-levels">
                     <%= render 'admin/partials/skill_levels', skill: skill %>
                   </div>
-
                 </div>
-
+              </td>
+              <!-- Spécialty -->
+              <td>
+                <div>
+                  <span><%= skill.specialty %></span>
+                </div>
               </td>
               <td class="text-end">
               <% skill.projects.each do |project| %>

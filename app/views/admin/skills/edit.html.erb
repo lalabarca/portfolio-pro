@@ -38,6 +38,12 @@
           <%= f.input :rating, collection: 1..3, label: "Niveau de la compétence", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
         </div>
 
+        <!-- Skill specialty -->
+        <div class="form-group">
+          <!-- Input -->
+          <%= f.input :specialty, collection: [['design', '0'], ['web', '1']], label: "Domaine de compétence", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
+        </div>
+
         <!-- Divider -->
         <hr class="mt-5 mb-5">
 
