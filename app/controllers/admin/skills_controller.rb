@@ -1,6 +1,6 @@
 module Admin
   class SkillsController < AdminController
-    before_action :set_skills_from_id, only: %i[edit update destroy]
+    before_action :set_skill, only: %i[edit update destroy]
 
     def index
       @skills = Skill.includes(:projects).all.order(:id)
@@ -22,12 +22,13 @@ module Admin
       end
     end
 
-    def edit; end
+    def edit
+    end
 
     def update
       if @skill.update(skill_params)
         flash.notice = "Modifications enregistrées"
-        redirect_to edit_admin_skill_path(@skill.id)
+        redirect_to admin_path
       else
         flash.alert = "Une erreur est survenue"
         render :edit
@@ -41,13 +42,12 @@ module Admin
 
     private
 
+    def set_skill
+      @skill = Skill.find(params[:id])
+    end
+
     def skill_params
-      params.require(:skill).permit(:title, :rating)
+      params.require(:skill).permit(:title, :rating, :photo)
     end
-
-    def set_skill_from_id
-      @skill = Skill.find_by_id(params[:id])
-    end
-
   end
 end

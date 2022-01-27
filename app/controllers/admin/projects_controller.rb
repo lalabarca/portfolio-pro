@@ -22,7 +22,8 @@ module Admin
       end
     end
 
-    def edit; end
+    def edit
+    end
 
     def update
       @project.update(project_params)
@@ -47,7 +48,7 @@ module Admin
     end
 
     def project_params
-      params.require(:project).permit(:title, :description, :finished, :date_start, :date_end, :url, :collaborators_desc, photos: [])
+      params.require(:project).permit(:title, :description, :finished, :date_start, :date_end, :url, :collaborator_desc, photos: [], skill_ids: [])
     end
   end
 end

@@ -1,12 +1,39 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  padding: 2rem 0;
+
+  a {
+    transition: all 0.4s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .main-navbar {
+    .nav-link {
+      color: #303B39;
+      font-size: 1.3rem;
+      margin-left: 1.4rem;
+    }
+    .nav-item:first-child  .nav-link {
+      border-bottom: 2px solid $third;
+    }
+  }
+}
+.navbar-logo {
+  width: 50px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.navbar-toggler {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%236E84A3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-position:50%;background-repeat:no-repeat;background-size:100%;display:inline-block;height:1.5em;vertical-align:middle;width:2.5em;
+  transition: all 0.4s;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  &:hover {
+    opacity: 0.5;
+  }
 }

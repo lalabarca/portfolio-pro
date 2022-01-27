@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <h1 class="mt-4"><%= pluralize @skills.size, "compétence" %></h1>
+  <div class="row">
+    <% @skills.each do |skill| %>
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-auto">
+
+              <!-- Avatar -->
+              <figure class="skill-icons">
+              <% if skill.photo.attached? %>
+                <%= cl_image_tag skill.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+              <% else %>
+                <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+              <% end %>
+              </figure>
+
+            </div>
+            <div class="col ms-n2">
+
+              <!-- Title -->
+              <h4 class="mb-1">
+                <%= skill.title %>
+              </h4>
+
+              <!-- Progress -->
+              <div class="row align-items-center g-0">
+                <div class="col">
+                  <!-- Progress -->
+                  <div class="skill-levels">
+                    <%= render 'admin/partials/skill_levels', skill: skill %>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+
+            </div>
+
+            <div class="col-auto">
+
+              <!-- Dropdown -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fe fe-more-vertical"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <%= link_to "Modifier", edit_admin_skill_path(skill), class: "dropdown-item" %>
+                  <%= link_to "Supprimer", admin_skill_path(skill), method: :delete,  data: { confirm: "Êtes-vous sûr ? Cette action supprimera définitivement cette compétence." }, class: "dropdown-item" %>
+                </div>
+              </div>
+
+            </div>
+          </div> <!-- / .row -->
+        </div> <!-- / .card-body -->
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

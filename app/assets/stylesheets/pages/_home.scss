@@ -1,1 +1,62 @@
 // Specific CSS for your home-page
+#header {
+  .row {
+    position: relative;
+  }
+
+  .illu {
+    width: 440px;
+    height: 321px;
+    position: absolute;
+    background-image: asset-url("hero-illu.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    right: 100px;
+    top: -58px;
+  }
+
+  h1 {
+    padding-bottom: 2rem;
+    z-index: 2;
+    position: relative;
+
+    span:first-child {
+      font-size: 9rem;
+      display: block;
+    }
+    span:nth-child(2) {
+      font-size: 7rem;
+      margin-right: 1.6rem;
+    }
+    span:nth-child(3) {
+      font-size: 6rem;
+    }
+    span:nth-child(4) {
+      font-size: 7rem;
+      display: block;
+    }
+
+  }
+  .hello {
+    width: 34%;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+    border-radius: 10px;
+    padding: 2rem;
+    right: 10px;
+    bottom: 2rem;
+    z-index: 1;
+    h2 {
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  background-color: $fifth;
+}

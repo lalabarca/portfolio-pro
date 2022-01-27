@@ -1,2 +1,98 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<%= render 'shared/navbar' %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 col-lg-8 ps-0">
+      <section class="gallery">
+        <% @project.photos.each do |photo| %>
+          <figure>
+            <%= cl_image_tag photo.key %>
+          </figure>
+        <% end %>
+      </section>
+    </div>
+    <div class="col-12 col-lg-4 pe-0">
+      <aside>
+        <h1><%= @project.title %></h1>
+        <h2>Description</h2>
+        <article>
+          <%= @project.description  %>
+        </article>
+        <h2>Status</h2>
+        <div class="col mb-4">
+          <div class="row align-items-center g-0">
+            <div class="col-auto">
+
+              <!-- Value -->
+              <% if @project.finished %>
+              <div class="small me-2">100%</div>
+              <% else %>
+              <div class="small me-2">0%</div>
+              <% end %>
+
+            </div>
+            <div class="col">
+
+              <!-- Progress -->
+              <div class="progress progress-sm">
+              <% if @project.finished %>
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <% else %>
+                  <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <% end %>
+              </div>
+
+            </div>
+          </div> <!-- / .row -->
+        </div>
+        <p class="period-project"><span class="fe fe-calendar"></span><%= date_format(@project.date_start) %> - <%= date_format(@project.date_end) %> (<%= (@project.date_end - @project.date_start).to_i %> jours)</p>
+        <h2>Compétences et outils</h2>
+        <div class="mb-5">
+          <% @project.skills.each do |skill| %>
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                  <!-- Avatar -->
+                    <figure class="skill-icons">
+                      <% if skill.photo.attached? %>
+                        <%= cl_image_tag skill.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+                      <% else %>
+                        <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+                      <% end %>
+                    </figure>
+                  </div>
+                  <div class="col ms-n2">
+                    <!-- Title -->
+                    <h4 class="mb-1">
+                      <%= skill.title %>
+                    </h4>
+
+                    <!-- Progress -->
+                    <div class="row align-items-center g-0">
+                      <div class="col">
+
+                        <!-- Progress -->
+                        <div class="skill-levels">
+                          <%= render 'admin/partials/skill_levels', skill: skill %>
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+
+                  </div>
+                </div>
+              </div> <!-- / .row -->
+            </div> <!-- / .card-body -->
+          <% end %>
+        </div>
+        <h2>L'équipe</h2>
+        <article>
+          <%= @project.collaborator_desc  %>
+        </article>
+        <h2>Voir le site</h2>
+        <%= link_to "tourcrib.com", @project.url, target: "_blank", class:"btn-normal" %>
+      </aside>
+    </div>
+  </div>
+</div>
