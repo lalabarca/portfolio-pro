@@ -1,3 +1,34 @@
 <div class="card">
-  <%= debug skill %>
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-auto">
+      <!-- Avatar -->
+        <figure class="skill-icons">
+          <% if skill.photo.attached? %>
+            <%= cl_image_tag skill.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+          <% else %>
+            <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+          <% end %>
+        </figure>
+      </div>
+      <div class="col ms-n2">
+        <!-- Title -->
+        <h4 class="mb-1">
+          <%= skill.title %>
+        </h4>
+
+        <!-- Progress -->
+        <div class="row align-items-center g-0">
+          <div class="col">
+
+            <!-- Progress -->
+            <div class="skill-levels">
+              <%= render 'admin/partials/skill_levels', skill: skill %>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </div>
+  </div> <!-- / .row -->
 </div> <!-- / .card-body -->
