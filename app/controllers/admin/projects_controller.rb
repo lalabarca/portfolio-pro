@@ -17,7 +17,7 @@ module Admin
       @project = Project.new(project_params)
       if @project.save
         flash.notice = "Projet ajouté"
-        redirect_to project_path(@project)
+        redirect_to root_path(anchor: "projects")
       else
         flash.alert = "Une erreur est survenue"
         render :new
