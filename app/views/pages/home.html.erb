@@ -58,17 +58,19 @@
     <div class="cards">
     <% @projects.each do |project| %>
       <div class="card-project" data-color="<%= %w(white  yellow white yellow).sample %>">
-      <!-- Image -->
-        <%= link_to project_path(project) do %>
-          <figure>
-            <%= cl_image_tag project.photos[0].key  %>
-          </figure>
+        <% if project.photos.attached? %>
+          <!-- Image -->
+          <%= link_to project_path(project) do %>
+            <figure>
+              <%= cl_image_tag project.photos[0].key  %>
+            </figure>
+          <% end %>
+          <h3>
+          <%= link_to project_path(project) do %>
+            <%= project.title %>
+          <% end %>
+          </h3>
         <% end %>
-        <h3>
-        <%= link_to project_path(project) do %>
-          <%= project.title %>
-        <% end %>
-        </h3>
       </div>
     <% end %>
     </div>
