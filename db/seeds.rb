@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+ProjectSkill.destroy_all
+Project.destroy_all
 Skill.destroy_all
 puts "Creating skills"
-
 titles = %w(HTML/Scss Javascript Ruby Rails Photoshop Figma Adobe\ XD Illustrator UI\ Design Google\ Maps\ Api Stimulus\ JS)
 
 titles.each do |t|
