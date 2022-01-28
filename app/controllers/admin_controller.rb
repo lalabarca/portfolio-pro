@@ -4,8 +4,8 @@ class AdminController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @projects = Project.includes(:skills).order(:updated_at)
-    @skills = Skill.includes(:projects).order(:created_at)
+    @projects = Project.includes(:skills).order(updated_at: :desc)
+    @skills = Skill.includes(:projects).order(created_at: :desc)
     @finished_projects = Project.where(finished: true).count
     @expert_skills = Skill.where(rating: 3).count
   end

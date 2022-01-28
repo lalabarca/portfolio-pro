@@ -16,9 +16,11 @@ module Admin
     def create
       @project = Project.new(project_params)
       if @project.save
+        flash.notice = "Projet ajouté"
         redirect_to project_path(@project)
       else
-        redirect_to admin_projects_path
+        flash.alert = "Une erreur est survenue"
+        render :new
       end
     end
 
@@ -32,7 +34,7 @@ module Admin
 
     def destroy
       @project.destroy
-      redirect_to projects_path
+      redirect_to admin_path
     end
 
     def time_ago(date)
