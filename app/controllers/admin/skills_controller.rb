@@ -28,7 +28,7 @@ module Admin
     def update
       if @skill.update(skill_params)
         flash.notice = "Modifications enregistrées"
-        redirect_to admin_path
+        redirect_to admin_skills_path
       else
         flash.alert = "Une erreur est survenue"
         render :edit

@@ -3,9 +3,8 @@
         <div class="container">
 
           <!-- Brand -->
-          <%# <a class="navbar-brand" href="#!">Navbar</a> %>
           <%= link_to root_path, class: "navbar-logo" do %>
-            <%= image_tag "lhdesign_logo.svg" %>
+            <%= image_tag "logo_dark.svg" %>
           <% end %>
           <!-- Toggler -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,16 +17,16 @@
             <!-- Nav -->
             <ul class="navbar-nav main-navbar me-auto">
               <li class="nav-item">
-                <%= link_to "Hello!", "#projects", class: "nav-link"  %>
+                <%= link_to "Hello!", "#header", class: "nav-link"  %>
               </li>
               <li class="nav-item">
-                <%= link_to "Services", "#projects", class: "nav-link"  %>
+                <%= link_to "Services", "#services", class: "nav-link"  %>
               </li>
               <li class="nav-item">
                 <%= link_to "Projets", "#projects", class: "nav-link"  %>
               </li>
               <li class="nav-item">
-                <%= link_to "Contact", "#projects", class: "nav-link"  %>
+                <%= link_to "Contact", "#contact", class: "nav-link"  %>
               </li>
               <% if user_signed_in? %>
                 <li class="nav-item dropdown">

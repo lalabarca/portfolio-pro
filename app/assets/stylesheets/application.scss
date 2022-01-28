@@ -5,8 +5,8 @@
 
 // // External libraries
 // @import "bootstrap/scss/bootstrap";
-// @import "font-awesome-sprockets";
-// @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // // Your CSS partials
 @import "components/index";
@@ -15,3 +15,14 @@
 @import "lib/dashkit/theme.bundle.css";
 @import "lib/dashkit/feather/feather";
 @import "trix/dist/trix";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h2, h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+}

@@ -1,7 +1,10 @@
 // Specific CSS for your home-page
 #header {
+  padding-top: 3rem ;
   .row {
     position: relative;
+    border-bottom: 2px solid $dark;
+    // margin-top: 3rem;
   }
 
   .illu {
@@ -21,20 +24,29 @@
     z-index: 2;
     position: relative;
 
+
     span:first-child {
       font-size: 9rem;
       display: block;
+      font-family: $headers-font;
     }
     span:nth-child(2) {
       font-size: 7rem;
       margin-right: 1.6rem;
+      font-size: $body-font;
+      // text-decoration: underline;
+      // text-decoration-color: $fourth;
+      // text-decoration-thickness: 3px;
+      // // text-underline-offset: .2em;
     }
     span:nth-child(3) {
       font-size: 6rem;
+      font-size: $body-font;
     }
     span:nth-child(4) {
       font-size: 7rem;
       display: block;
+      font-size: $body-font;
     }
 
   }
@@ -51,12 +63,68 @@
     h2 {
       line-height: 1.6;
       margin-bottom: 0;
+      font-family: $body-font;
+    }
+    p {
+      font-size: 1.6rem;
     }
   }
 }
 
-.separator {
-  width: 100%;
-  height: 2px;
-  background-color: $fifth;
+// .separator {
+//   width: 100%;
+//   height: 2px;
+//   background-color: #000;
+//   margin-top: 3rem;
+// }
+
+#services {
+  padding: 3.5rem 0;
+  .col-lg-6 {
+    padding: 0 2.5rem;
+  }
+ .col-lg-6:last-of-type {
+   margin-top: 7rem;
+   h2 {
+     margin-top: 2.4rem;
+   }
+ }
+ h2 {
+   font-size: 1.8rem;
+ }
+ article span {
+   color: $first;
+ }
+}
+
+#projects, #contact {
+  padding: 5rem 0;
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+#projects {
+  background-color: #fff;
+}
+
+#contact {
+  background-color: $dark;
+  color: #fff;
+
+  p:first-of-type {
+    font-size: 5rem;
+    a {
+      color: $second;
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+      transition: all 0.4s;
+      &:hover {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+  p:last-of-type {
+    font-size: 1.5rem;
+  }
 }
