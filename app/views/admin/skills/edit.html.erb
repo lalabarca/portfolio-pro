@@ -41,7 +41,7 @@
         <!-- Skill specialty -->
         <div class="form-group">
           <!-- Input -->
-          <%= f.input :specialty, collection: [['design', '0'], ['web', '1']], label: "Domaine de compétence", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
+          <%= f.input :specialty, collection: [['Design', '0'], ['Web', '1']], label: "Domaine de compétence", label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
         </div>
 
         <!-- Divider -->
@@ -67,7 +67,7 @@
         <!-- Buttons -->
 
         <%= f.submit class: "btn w-100 btn-primary" %>
-        <%= link_to "Annuler", admin_path, class:"btn w-100 btn-link text-muted mt-2" %>
+        <%= link_to "Annuler", admin_skills_path, class:"btn w-100 btn-link text-muted mt-2" %>
       <% end %>
 
     </div>
