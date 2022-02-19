@@ -116,7 +116,7 @@
   p:first-of-type {
     font-size: 5rem;
     a {
-      color: $second;
+      color: $first;
       border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
       transition: all 0.4s;
       &:hover {

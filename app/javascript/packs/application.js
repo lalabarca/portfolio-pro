@@ -21,10 +21,10 @@ import "trix"
 import "@rails/actiontext"
 
 import '../plugins/choices';
-import { colorCards } from "./project-cards";
+// import { colorCards } from "./project-cards";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  colorCards();
+  // colorCards();
 });

@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
   box-shadow: $box-shadow;
   border-radius: 10px;
   padding: 2rem;
@@ -19,11 +18,24 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: $gray-l;
     opacity: 0;
     z-index: 0;
     transition: all 0.4s ease-in-out;
 
+  }
+
+  &:nth-child(odd) {
+    background-color: #fff;
+    &:before {
+      background-color: $gray-l;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: $second-l;
+    &:before {
+      background-color: $second;
+    }
   }
 
   figure {
@@ -70,9 +82,9 @@
 }
 
 .blue-o {
-  background-color: $second;
+  background-color: $second-l;
   &:before {
-    background-color: $turquoise;
+    background-color: $second;
   }
 }
 
