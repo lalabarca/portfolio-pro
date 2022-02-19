@@ -46,9 +46,10 @@
           </div> <!-- / .row -->
         </div>
         <% if @project.date_end %>
-          <p class="period-project"><span class="fe fe-calendar"></span><%= date_format(@project.date_start) %> - <%= date_format(@project.date_end) %> (<%= (@project.date_end - @project.date_start).to_i %> jours)</p>
+          <p class="period-project"><span class="fe fe-calendar"></span>Durée du projet</p>
+          <%= date_format(@project.date_start) %> - <%= date_format(@project.date_end) %> (<%= (@project.date_end - @project.date_start).to_i %> jours)
         <% else %>
-          <p class="period-project"><span class="fe fe-calendar"></span>Début: <%= date_format(@project.date_start) %></p>
+          <p class="period-project"><span class="fe fe-calendar"></span>Début du projet: <%= date_format(@project.date_start) %></p>
         <% end %>
         <h2>Compétences et outils</h2>
         <div class="mb-5">
