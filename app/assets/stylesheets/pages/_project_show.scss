@@ -25,12 +25,13 @@ aside {
     margin-bottom: 1.4rem;
   }
   .period-project {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
     span {
       color: $gray-m;
-      font-size: 2.2rem;
-      // display: block;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-right: 10px;
     }
   }
 }

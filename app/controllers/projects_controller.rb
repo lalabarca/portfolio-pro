@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def date_format(date)
-    date.strftime("%A %B %Y")
+    date.strftime("%-d/%-m/%Y")
   end
   helper_method :date_format
 end
