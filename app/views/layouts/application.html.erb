@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Laura Hardy-Dessources - Front-end developer Junior</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-
-    <meta property='og:title' content='Laura Hardy-Dessources - Front-End developer Junior'/>
-    <meta property='og:image' content='https://github.com/lalabarca/lalabarca/blob/main/portfolio/macbook_portfolio.png'/>
-    <meta property='og:description' content="Hello 👋🏾 Je m'appelle Laura Hardy-Dessources et je suis Front-End développeuse Junior et webdesigner."/>
-    <meta property='og:url' content='http://www.lhdesign.me/'/>
-
 
     <%= favicon_link_tag asset_path('favicon.png') %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

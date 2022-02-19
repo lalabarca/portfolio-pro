@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Vous n'êtes pas autorisé à effectuer cette action."
     redirect_to(root_path)
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
