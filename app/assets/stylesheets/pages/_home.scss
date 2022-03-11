@@ -20,15 +20,6 @@
   }
 
   .small-illu {
-    width: 139px;
-    height: 115px;
-    position: absolute;
-    background-image: asset-url("pen_illu.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 0;
-    right: 250px;
-    top: 8px;
     display: none;
   }
 
@@ -156,7 +147,16 @@
        display: none;
     }
     .small-illu {
-       display: flex;
+      width: 139px;
+      height: 115px;
+      position: absolute;
+      background-image: asset-url("pen_illu.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 0;
+      right: 250px;
+      top: 8px;
+      display: block;
     }
   }
 
