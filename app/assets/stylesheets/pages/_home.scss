@@ -19,6 +19,19 @@
     top: -58px;
   }
 
+  .small-illu {
+    width: 139px;
+    height: 115px;
+    position: absolute;
+    background-image: asset-url("pen_illu.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    right: 250px;
+    top: 8px;
+    display: none;
+  }
+
   h1 {
     padding-bottom: 2rem;
     z-index: 2;
@@ -114,7 +127,7 @@
   color: #fff;
 
   p:first-of-type {
-    font-size: 5rem;
+    font-size: 4.5rem;
     a {
       color: $first;
       border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
@@ -126,5 +139,87 @@
   }
   p:last-of-type {
     font-size: 1.5rem;
+  }
+}
+
+/* ************** MEDIA QUERIES *********** */
+@media (max-width: 990px) {
+  #header {
+    padding-top: 2rem;
+
+    .hello {
+       position: initial;
+       width: 100%;
+       margin-bottom: 3rem;
+     }
+    .illu {
+       display: none;
+    }
+    .small-illu {
+       display: flex;
+    }
+  }
+
+  #services .col-lg-6 {
+    article {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  #services .col-lg-6:last-of-type {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #services, #projects, #contact {
+    padding: 3rem 0;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+  #header .small-illu {
+    right: 2rem;
+  }
+}
+
+@media (max-width: 549px) {
+  #header {
+    padding-top: 0;
+
+    h1 {
+     display: flex;
+     flex-direction: column;
+    }
+    .small-illu {
+     display: none;
+    }
+  }
+
+  #projects h2, #contact h2 {
+    text-align: center;
+  }
+
+  #contact p:first-of-type {
+    font-size: 2.3rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 374px) {
+  #header h1 {
+    span:first-child {
+      font-size: 6.3rem;
+    }
+    span:nth-child(2), span:nth-child(3), span:nth-child(4) {
+      font-size: 5rem;
+    }
+  }
+
+}
+
+@media (max-width: 355px) {
+  #contact p:first-of-type {
+    font-size: 1.9rem;
   }
 }

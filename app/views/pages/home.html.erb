@@ -17,6 +17,7 @@
       </div>
       <div class="separator"></div>
       <div class="illu"></div>
+      <div class="small-illu"></div>
     </div>
   </div>
 </section>
@@ -80,9 +81,13 @@
 </section>
 <section id="contact">
   <div class="container">
-    <h2>Me contacter</h2>
-    <p><%= mail_to "hello@lhdesign.me", "hello@lhdesign.me" %></p>
-    <p>N'hésitez pas à me contacter pour avoir plus d'informations sur mon travail, mon parcours, ce que vous voulez... 😁</p>
+   <div class="row">
+     <div class="col-12">
+      <h2>Me contacter</h2>
+      <p><%= mail_to "hello@lhdesign.me", "hello@lhdesign.me" %></p>
+      <p>N'hésitez pas à me contacter pour avoir plus d'informations sur mon travail, mon parcours, ce que vous voulez... 😁</p>
+     </div>
+   </div>
   </div>
 </section>
 <%= render "shared/footer" %>
