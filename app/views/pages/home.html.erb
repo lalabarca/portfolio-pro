@@ -11,7 +11,7 @@
       </div>
       <div class="col-12 col-lg-3">
         <div class="hello">
-          <p>Hello 👋🏾</p>
+          <p>Hello <span id="hello-wave">👋🏾</span></p>
           <h2>Je m'appelle <strong>Laura Hardy-Dessources</strong> et je suis Front-End développeuse Junior et webdesigner.</h2>
         </div>
       </div>
@@ -60,21 +60,19 @@
     <h2>Mes derniers projets</h2>
     <div class="cards">
     <% @projects.each do |project| %>
-      <div class="card-project">
-        <% if project.photos.attached? %>
-          <!-- Image -->
-          <%= link_to project_path(project) do %>
-            <figure>
-              <%= cl_image_tag project.photos[1].key  %>
-            </figure>
+      <%= link_to project_path(project), class: "link-project" do %>
+        <div class="card-project">
+          <% if project.photos.attached? %>
+            <!-- Image -->
+              <figure>
+                <%= cl_image_tag project.photos[1].key  %>
+              </figure>
+            <h3>
+              <%= project.title %>
+            </h3>
           <% end %>
-          <h3>
-          <%= link_to project_path(project) do %>
-            <%= project.title %>
-          <% end %>
-          </h3>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
     </div>
   </div>

@@ -1,3 +1,7 @@
+.link-project {
+  display: block;
+}
+
 .card-project {
   height: 360px;
   display: flex;
@@ -6,7 +10,8 @@
   align-items: center;
   box-shadow: $box-shadow;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 0.6rem 1rem 1.8rem 1rem;
+  margin-bottom: 1.3rem;
   position: relative;
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -39,20 +44,20 @@
   }
 
   figure {
-    height: 220px;
-    margin-bottom: 1.3rem;
+    height: 240px;
+    margin-bottom: 0.2rem;
     position: relative;
     z-index: 1;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
   h3 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: center;
     position: relative;
     z-index: 1;
