@@ -26,6 +26,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                     <%= link_to "Dashboard", admin_path, class: "dropdown-item" %>
+                    <%= link_to "Projects", admin_projects_path, class: "dropdown-item" %>
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                   </div>
                 </li>
