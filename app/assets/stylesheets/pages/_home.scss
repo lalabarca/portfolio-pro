@@ -20,7 +20,7 @@
   }
 
   .small-illu {
-    display: none;
+    opacity: 0;
   }
 
   h1 {
@@ -156,7 +156,8 @@
       z-index: 0;
       right: 250px;
       top: 8px;
-      display: block;
+      opacity: 1;
+      transition: all 0.5s;
     }
   }
 
