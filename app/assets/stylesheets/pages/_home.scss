@@ -117,22 +117,37 @@
   background-color: $dark;
   color: #fff;
 
+  .col-12 p:last-child {
+    margin-bottom: 2rem;
+  }
+
   h3 {
     font-family: $body-font;
     font-size: 1.6rem;
     font-weight: 700;
+
+    span {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $first;
+        display: block;
+      }
+    }
   }
 
   .big-mail {
-    font-size: 3rem;
-    a {
-      color: $first;
-      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
-      transition: all 0.4s;
+    color: $first;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+    transition: all 0.4s;
+    font-size: 2.8rem;
       &:hover {
         border-bottom: 1px solid #fff;
       }
-    }
   }
 
   p {
@@ -140,7 +155,7 @@
   }
 
   iframe {
-    margin-bottom: 1.8rem;
+    margin-top: 1rem;
   }
 }
 
@@ -188,9 +203,6 @@
     padding: 3rem 0;
   }
 
-  #contact iframe {
-    width: 100%;
-  }
 }
 
 @media (min-width: 550px) and (max-width: 767px) {
@@ -212,13 +224,19 @@
     }
   }
 
-  #projects h2, #contact h2, #contact h3 {
+  #projects h2, #contact h2 {
     text-align: center;
   }
 
   #contact .big-mail {
     font-size: 2.3rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  #contact iframe {
+    height: 620px;
   }
 }
 
