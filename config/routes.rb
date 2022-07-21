@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get "pages/download_pdf"
+
   namespace :admin do
     get '', action: 'index', as: '/'
     resources :projects, except: :show

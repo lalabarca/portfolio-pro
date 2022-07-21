@@ -8,4 +8,13 @@ class PagesController < ApplicationController
 
     @projects = Project.order(updated_at: :desc)
   end
+
+  def download_pdf
+    send_file(
+      "#{Rails.root}/app/assets/cv_hardy_dessources_laura_Front-end_Developper.pdf",
+      filename: "cv_hardy_dessources_laura.pdf",
+      type: "application/pdf"
+    )
+  end
+
 end

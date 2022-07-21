@@ -1,0 +1,31 @@
+.dl-cv {
+  background-color: $dark;
+  padding: 1.8rem 0;
+  color: #fff;
+
+  .col-12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dl-cv {
+    text-align: center;
+
+    .col-12 {
+      flex-direction: column;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+}

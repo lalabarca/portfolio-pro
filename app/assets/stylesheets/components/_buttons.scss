@@ -15,3 +15,10 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+@media (max-width: 320px) {
+  .btn-normal {
+    padding: 10px 30px;
+  }
+}
