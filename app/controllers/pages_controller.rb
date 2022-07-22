@@ -3,10 +3,10 @@ class PagesController < ApplicationController
 
   def home
     # @skills_design = Skill.where("specialty = ? AND rating = ?", "0", 3).limit(2)
-    @skill_adobe_xd = Skill.where("specialty = ? AND rating = ?", "0", 3).last
-    @skill_figma = Skill.where("specialty = ? AND rating = ?", "0", 2).first
+    @skill_adobe_xd = Skill.where("title = ?", "Adobe XD").first
+    @skill_figma = Skill.where("title = ?", "Figma").first
 
-    @skills_web = Skill.where("specialty = ? AND rating = ?", "1", 3).last
+    @skills_rails = Skill.where("title = ?", "Rails").first
     @skills_web_standard = Skill.where("specialty = ? AND rating = ?", "1", 2).first
 
     @projects = Project.order(updated_at: :desc)
