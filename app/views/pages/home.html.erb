@@ -32,16 +32,14 @@
         </article>
 
         <div>
-          <% @skills_design.each do |skill| %>
-            <%= render 'shared/skills_list', skill: skill %>
-          <% end %>
+          <%= render 'shared/skills_list', skill: @skill_adobe_xd %>
+
+          <%= render 'shared/skills_list', skill: @skill_figma %>
         </div>
       </div>
       <div class="col-12 col-lg-6">
         <div>
-          <% @skills_web.each do |skill| %>
-            <%= render 'shared/skills_list', skill: skill %>
-          <% end %>
+          <%= render 'shared/skills_list', skill: @skills_web %>
 
           <%= render 'shared/skills_list', skill: @skills_web_standard %>
 

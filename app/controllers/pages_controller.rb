@@ -2,8 +2,11 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @skills_design = Skill.where("specialty = ? AND rating = ?", "0", 3).limit(2)
-    @skills_web = Skill.where("specialty = ? AND rating = ?", "1", 3)
+    # @skills_design = Skill.where("specialty = ? AND rating = ?", "0", 3).limit(2)
+    @skill_adobe_xd = Skill.where("specialty = ? AND rating = ?", "0", 3).last
+    @skill_figma = Skill.where("specialty = ? AND rating = ?", "0", 2).first
+
+    @skills_web = Skill.where("specialty = ? AND rating = ?", "1", 3).last
     @skills_web_standard = Skill.where("specialty = ? AND rating = ?", "1", 2).first
 
     @projects = Project.order(updated_at: :desc)
