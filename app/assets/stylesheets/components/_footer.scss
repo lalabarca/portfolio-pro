@@ -23,6 +23,10 @@ footer {
     li {
       list-style: none;
       margin-right: 2rem;
+      &:last-child {
+        margin-right: 0;
+      }
+
       a {
         font-size: 2.3rem;
         color: $dark;
