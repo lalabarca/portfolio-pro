@@ -34,6 +34,15 @@ aside {
       margin-right: 10px;
     }
   }
+
+  a {
+    color: $third;
+    transition: color 0.3s;
+
+    &:hover {
+      color: darken($third, 20%);
+    }
+  }
 }
 
 .bg-finished {
