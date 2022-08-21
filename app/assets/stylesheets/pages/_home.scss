@@ -101,8 +101,8 @@
  }
 }
 
-#projects, #contact {
-  padding: 5rem 0;
+#projects, #contact, #demo-day {
+  padding: 4rem 0;
   h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
@@ -111,6 +111,23 @@
 
 #projects {
   background-color: #fff;
+}
+
+#demo-day {
+  ul {
+    margin: 0;
+
+    li {
+      margin-bottom: 1rem;
+      &:first-child a {
+        margin-top: 0.8rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 #contact {

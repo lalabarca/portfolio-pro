@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @skills_web_standard = Skill.where("specialty = ? AND rating = ?", "1", 2).first
 
     @projects = Project.order(updated_at: :desc)
+    @map = Project.where('id = ?', 1).first
   end
 
   def download_pdf

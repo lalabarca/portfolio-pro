@@ -9,17 +9,13 @@ footer {
       cursor: text;
     }
   }
-  &> div.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   ul {
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     li {
       list-style: none;
       margin-right: 2rem;
@@ -35,5 +31,33 @@ footer {
         }
       }
     }
+  }
+}
+
+.to-top {
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: all 0.4s;
+
+  span {
+    position: relative;
+    z-index: 3000;
+  }
+
+  &::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    border: 2px solid $dark;
+    display: block;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    position: absolute;
+    border-radius: 50%;
+    top: -13px;
+    left: -17px;
+    z-index: 2000;
   }
 }

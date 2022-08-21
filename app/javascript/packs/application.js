@@ -21,10 +21,14 @@ import "trix"
 import "@rails/actiontext"
 
 import '../plugins/choices';
+import { smallButtons } from "./small-buttons";
+import { toTop } from './to-top';
 // import { colorCards } from "./project-cards";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // colorCards();
+  toTop();
+  smallButtons();
 });
