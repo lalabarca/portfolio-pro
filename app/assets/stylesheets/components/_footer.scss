@@ -61,3 +61,22 @@ footer {
     z-index: 2000;
   }
 }
+
+@media (max-width: 900px) {
+
+  .to-top {
+    position: static;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid $dark;
+    margin-top: 1rem;
+
+    span {
+      line-height: 2.2;
+    }
+
+  }
+
+}
