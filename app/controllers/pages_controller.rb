@@ -15,8 +15,8 @@ class PagesController < ApplicationController
 
   def download_pdf
     send_file(
-      "#{Rails.root}/app/assets/cv_hardy_dessources_laura_Front-end_Developper.pdf",
-      filename: "cv_hardy_dessources_laura.pdf",
+      "#{Rails.root}/app/assets/cv_hardy_dessources_laura_Fullstack_Developper.pdf",
+      filename: "cv_Hardy_Dessources_Laura_Fullstack_developper.pdf",
       type: "application/pdf"
     )
   end
