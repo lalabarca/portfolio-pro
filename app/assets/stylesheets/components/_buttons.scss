@@ -16,6 +16,31 @@
   text-decoration: none;
 }
 
+.btn-b {
+  border-radius: 50px;
+  display: block;
+  padding: 15px 45px;
+  text-align: center;
+  transition: 0.5s;
+  background-color: #191919;
+  color: #fff;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #1769ff;
+  }
+}
+
 .small-btn {
   width: 300px;
 }

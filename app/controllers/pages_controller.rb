@@ -11,6 +11,21 @@ class PagesController < ApplicationController
 
     @projects = Project.order(updated_at: :desc)
     @map = Project.where('id = ?', 1).first
+
+    @behance = [
+      {
+        url: "https://res.cloudinary.com/dskz4h4td/image/upload/v1670352942/mockup_en2clik_1700_t29i6w.jpg",
+        title: "En2clik"
+      },
+      {
+        url: "https://res.cloudinary.com/dskz4h4td/image/upload/v1670353369/mockups_insta_jyrjsw.jpg",
+        title: "Martinique Transport"
+      },
+      {
+        url: "https://res.cloudinary.com/dskz4h4td/image/upload/v1670353494/dp_mockup_1700_hs4ui2.jpg",
+        title: "Club Ti Chimen"
+      }
+    ]
   end
 
   def download_pdf

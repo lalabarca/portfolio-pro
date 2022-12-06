@@ -12,7 +12,7 @@
       <div class="col-12 col-lg-3">
         <div class="hello">
           <p>Hello <span id="hello-wave">👋🏾</span></p>
-          <h2>Je m'appelle <strong>Laura Hardy-Dessources</strong> et je suis développeuse Fullstack junior et webdesigner.</h2>
+          <h2>Je m'appelle Laura Hardy-Dessources et je suis <strong>développeuse web</strong> et <strong>webdesigner</strong>.</h2>
         </div>
       </div>
       <div class="separator"></div>
@@ -77,6 +77,24 @@
         </div>
       <% end %>
     <% end %>
+    </div>
+  </div>
+</section>
+<section id="behance">
+  <div class="container">
+    <h2>Mes projets en tant qu'infographiste</h2>
+    <p>J'ai aussi une expérience de plus de 2 ans en tant qu'infographiste. Période pendant laquelle j'ai pu réaliser des <strong>flyers</strong>, <strong>affiches</strong>, <strong>brochures</strong>, <strong>visuels pour les réseaux sociaux</strong>...</p>
+    <p>Vous pouvez découvrir ces projets sur mon portfolio Behance.</p>
+    <div class="row justify-content-center text-center">
+      <% @behance.each do |be| %>
+        <div class="col-12 col-lg-4">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)),  url('<%= image_path be[:url] %>');">
+            <h3><%= be[:title] %></h3>
+          </div>
+        </div>
+      <% end %>
+      <figcaption><em>Infographie: quelques réalisations.</em></figcaption>
+      <%= link_to "https://www.behance.net/laurahardy2e2d", target: "_blank", class: "btn btn-b" do %><i class="fab fa-behance"></i></i>Voir le portfolio Behance<% end %>
     </div>
   </div>
 </section>

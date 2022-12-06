@@ -1,5 +1,15 @@
 <%= render 'shared/navbar' %>
 
+<% if user_signed_in? %>
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-12">
+        <%= link_to "Modifier le projet", edit_admin_project_path(@project), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="container my-5">
   <div class="row">
     <div class="col-12 col-lg-7 ps-0">
@@ -100,8 +110,10 @@
             <p>J'ai travaillé seule sur ce projet.</p>
           <% end %>
         </article>
-        <h2>Le site en ligne</h2>
-        <%= link_to "Voir le site", @project.url, target: "_blank", class:"btn-normal" %>
+        <% unless @project.url.empty? %>
+          <h2>Le site en ligne</h2>
+          <%= link_to "Voir le site", @project.url, target: "_blank", class:"btn-normal" %>
+        <% end %>
       </aside>
     </div>
   </div>

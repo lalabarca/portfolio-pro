@@ -55,7 +55,7 @@
 
   }
   .hello {
-    width: 34%;
+    width: 40%;
     position: absolute;
     background-color: #fff;
     box-shadow: $box-shadow;
@@ -101,8 +101,8 @@
  }
 }
 
-#projects, #contact, #demo-day {
-  padding: 4rem 0;
+#projects, #contact, #demo-day, #behance {
+  padding: 3rem 0;
   h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
@@ -111,6 +111,15 @@
 
 #projects {
   background-color: #fff;
+}
+
+#behance {
+  background-color: #1769ff;
+  color: #fff;
+
+  figcaption {
+    margin-bottom: 1.9rem;
+  }
 }
 
 #demo-day {
