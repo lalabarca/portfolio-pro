@@ -57,7 +57,7 @@
         </div>
         <% if @project.date_end %>
           <p class="period-project"><span class="fe fe-calendar"></span>Durée du projet</p>
-          <p class="mb-4"><strong><%= date_format(@project.date_start) %> - <%= date_format(@project.date_end) %></strong> (<%= (@project.date_end - @project.date_start).to_i %> jours)</p>
+          <p class="mb-4"><strong><%= date_format(@project.date_start) %> - <%= date_format(@project.date_end) %></strong> - (<%= pluralize @nb_jours, "jour" %>)</p>
         <% else %>
           <p class="period-project"><span class="fe fe-calendar"></span>Début du projet</p>
           <p class="mb-4"><strong><%= date_format(@project.date_start) %></strong></p>
