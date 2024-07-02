@@ -26,49 +26,49 @@
     <div class="row">
       <div class="col-12 col-lg-6">
         <article>
-          <h2>Ui Design</h2>
+          <h2>Création Graphique</h2>
           <p>Passionée par le graphisme et le design depuis toute petite, j'ai commencé à travailler en tant qu'infographiste puis je me suis tourné vers le webdesign après une formation de Chef de projet multimédia.</p>
           <p>Le petit <span class="fe fe-plus-circle"></span> : la veille pour toujours être au courant des dernières tendances, le travail avec les typographies et les illustrations, la construction des maquettes et prototypes.</p>
         </article>
 
         <div>
           <div class="card">
-  <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col-auto">
-      <!-- Avatar -->
-        <figure class="skill-icons">
-          <% if @skill_adobe_xd.photo.attached? %>
-            <%= cl_image_tag @skill_adobe_xd.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
-          <% else %>
-            <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
-          <% end %>
-        </figure>
-      </div>
-      <div class="col ms-n2">
-        <!-- Title -->
-        <h4 class="mb-1">
-          <%= @skill_adobe_xd.title %>
-        </h4>
-
-        <!-- Progress -->
-        <div class="row align-items-center g-0">
-          <div class="col">
-
-            <!-- Progress -->
-            <div class="skill-levels">
-              <%= render 'admin/partials/skill_levels', skill: @skill_adobe_xd %>
+          <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <!-- Avatar -->
+              <figure class="skill-icons">
+                <% if @skill_adobe_xd.photo.attached? %>
+                  <%= cl_image_tag @skill_adobe_xd.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+                <% else %>
+                  <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+                <% end %>
+              </figure>
             </div>
+            <div class="col ms-n2">
+              <!-- Title -->
+              <h4 class="mb-1">
+                <%= @skill_adobe_xd.title %>
+              </h4>
 
+              <!-- Progress -->
+              <div class="row align-items-center g-0">
+                <div class="col">
+
+                  <!-- Progress -->
+                  <div class="skill-levels">
+                    <%= render 'admin/partials/skill_levels', skill: @skill_adobe_xd %>
+                  </div>
+
+                </div>
+            </div> <!-- / .row -->
           </div>
-        </div> <!-- / .row -->
       </div>
-    </div>
-  </div> <!-- / .row -->
-</div> <!-- / .card-body -->
+    </div> <!-- / .row -->
+  </div> <!-- / .card-body -->
 
 
-          <div class="card">
+<div class="card">
   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-auto">
@@ -103,12 +103,12 @@
   </div> <!-- / .row -->
 </div> <!-- / .card-body -->
 
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div>
-          <div class="card">
-  <div class="card-body">
+  </div>
+</div>
+<div class="col-12 col-lg-6">
+  <div>
+  <div class="card">
+   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-auto">
       <!-- Avatar -->
@@ -143,7 +143,8 @@
 </div> <!-- / .card-body -->
 
 
-          <%# <%= render 'shared/skills_list', skill: @skills_web_standard %>
+          <%= render 'shared/skills_list', skill: @skills_web_standard =%>
+
 
         </div>
         <article>
@@ -157,12 +158,12 @@
 </section>
 
 <%# Bandeau téléchargement de CV %>
-<%= render "layouts/partials/dl-cv" %>
+<%# <%= render "layouts/partials/dl-cv" %>
 <%# Bandeau téléchargement de CV %>
 
 <section id="projects">
   <div class="container">
-    <h2>Mes derniers projets</h2>
+    <h2>Mes derniers projets WEB</h2>
     <div class="cards">
     <% @projects.each do |project| %>
       <%= link_to project_path(project), class: "link-project" do %>

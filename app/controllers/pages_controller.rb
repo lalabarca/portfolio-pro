@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
     @skills_rails = Skill.where("title = ?", "Rails").first
     @skills_web_standard = Skill.where("specialty = ? AND rating = ?", "1", 2).first
+    @skills_js = Skill.where("title = ?", "Javascript").first
 
     @projects = Project.order(updated_at: :desc)
     @map = Project.where('id = ?', 1).first
