@@ -9,6 +9,8 @@ User.destroy_all
 ProjectSkill.destroy_all
 Project.destroy_all
 Skill.destroy_all
+puts "Creating user"
+User.create!(email: "laura.hardydes@gmail.com", password: "myStuff22", admin: true)
 puts "Creating skills"
 titles = %w(HTML/Scss Javascript Ruby Rails Photoshop Figma Adobe\ XD Illustrator UI\ Design Google\ Maps\ Api Stimulus\ JS)
 

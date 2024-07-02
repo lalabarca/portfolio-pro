@@ -4,15 +4,15 @@
     <div class="row">
       <div class="col-12 col-lg-9">
         <h1>
-          <span>Web</span>
-          <span>design</span><span>&</span>
-          <span>web apps</span>
+          <span>LHDesign</span>
+          <span>Print</span><span>&</span>
+          <span>Digital</span>
         </h1>
       </div>
       <div class="col-12 col-lg-3">
         <div class="hello">
           <p>Hello <span id="hello-wave">👋🏾</span></p>
-          <h2>Je m'appelle Laura Hardy-Dessources et je suis <strong>développeuse web</strong> et <strong>webdesigner</strong>.</h2>
+          <h2> Bienvenue sur LHDesign ! Je m'appelle Laura Hardy-Dessources et je suis <strong>infographiste</strong>, <strong>développeuse web</strong> et <strong>web designer</strong>.</h2>
         </div>
       </div>
       <div class="separator"></div>
@@ -32,16 +32,118 @@
         </article>
 
         <div>
-          <%= render 'shared/skills_list', skill: @skill_adobe_xd %>
+          <div class="card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-auto">
+      <!-- Avatar -->
+        <figure class="skill-icons">
+          <% if @skill_adobe_xd.photo.attached? %>
+            <%= cl_image_tag @skill_adobe_xd.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+          <% else %>
+            <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+          <% end %>
+        </figure>
+      </div>
+      <div class="col ms-n2">
+        <!-- Title -->
+        <h4 class="mb-1">
+          <%= @skill_adobe_xd.title %>
+        </h4>
 
-          <%= render 'shared/skills_list', skill: @skill_figma %>
+        <!-- Progress -->
+        <div class="row align-items-center g-0">
+          <div class="col">
+
+            <!-- Progress -->
+            <div class="skill-levels">
+              <%= render 'admin/partials/skill_levels', skill: @skill_adobe_xd %>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </div>
+  </div> <!-- / .row -->
+</div> <!-- / .card-body -->
+
+
+          <div class="card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-auto">
+      <!-- Avatar -->
+        <figure class="skill-icons">
+          <% if @skill_figma.photo.attached? %>
+            <%= cl_image_tag @skill_figma.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+          <% else %>
+            <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+          <% end %>
+        </figure>
+      </div>
+      <div class="col ms-n2">
+        <!-- Title -->
+        <h4 class="mb-1">
+          <%= @skill_figma.title %>
+        </h4>
+
+        <!-- Progress -->
+        <div class="row align-items-center g-0">
+          <div class="col">
+
+            <!-- Progress -->
+            <div class="skill-levels">
+              <%= render 'admin/partials/skill_levels', skill: @skill_figma %>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </div>
+  </div> <!-- / .row -->
+</div> <!-- / .card-body -->
+
         </div>
       </div>
       <div class="col-12 col-lg-6">
         <div>
-          <%= render 'shared/skills_list', skill: @skills_rails %>
+          <div class="card">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-auto">
+      <!-- Avatar -->
+        <figure class="skill-icons">
+          <% if @skills_rails.photo.attached? %>
+            <%= cl_image_tag @skills_rails.photo.key, class: "avatar-img rounded", alt: "icon de compétence" %>
+          <% else %>
+            <%= image_tag "skill_icon.svg", class: "avatar-img rounded", alt: "icon de compétence"  %>
+          <% end %>
+        </figure>
+      </div>
+      <div class="col ms-n2">
+        <!-- Title -->
+        <h4 class="mb-1">
+          <%= @skills_rails.title %>
+        </h4>
 
-          <%= render 'shared/skills_list', skill: @skills_web_standard %>
+        <!-- Progress -->
+        <div class="row align-items-center g-0">
+          <div class="col">
+
+            <!-- Progress -->
+            <div class="skill-levels">
+              <%= render 'admin/partials/skill_levels', skill: @skills_rails %>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </div>
+  </div> <!-- / .row -->
+</div> <!-- / .card-body -->
+
+
+          <%# <%= render 'shared/skills_list', skill: @skills_web_standard %>
 
         </div>
         <article>
